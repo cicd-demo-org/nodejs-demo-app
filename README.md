@@ -3,6 +3,8 @@
 This small HTTP application demonstrates a shared Node pipeline. Run `npm ci`,
 `npm run lint`, `npm test`, `npm run build`, and `npm start` locally.
 
+After starting the app, `GET /health` returns `{"status":"ok"}`.
+
 On a pull request or manual dispatch, the delivery workflow builds and runs
 simulated vendor and delivery gates, then progresses through the GitHub
 environments `dev`, `test`, and `prod`. Production requires the configured
