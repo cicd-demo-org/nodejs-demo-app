@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3000;
 function createServer() {
   return http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
+    if (req.url === '/health') {
+      res.end(JSON.stringify({ status: 'ok' }));
+      return;
+    }
     res.end(JSON.stringify({ message: 'Hello from demo-app-1', path: req.url }));
   });
 }

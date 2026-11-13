@@ -17,3 +17,16 @@ test('server responds with 200 and expected message', async () => {
 
   server.close();
 });
+
+test('health endpoint reports the application is running', async (t) => {
+  const server = createServer();
+  await new Promise((resolve) => server.listen(0, resolve));
+  t.after(() => server.close());
+  const { port } = server.address();
+
+  const response = await fetch(`http://localhost:${port}/health`);
+
+  assert.strictEqual(response.status, 200);
+  assert.strictEqual(response.headers.get('content-type'), 'application/json');
+  assert.deepStrictEqual(await response.json(), { status: 'ok' });
+});
