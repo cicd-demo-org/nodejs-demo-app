@@ -16,5 +16,8 @@ self-hosted Docker runner. They require explicit configuration and are not
 connected to the simulated gates. They are not production authorization.
 See the deployment guide before enabling them.
 
+Pull requests demonstrate the organization-required checks and the protected
+production approval before merge.
+
 See [governance-docs](https://github.com/cicd-demo-org/governance-docs) for
 setup, limits, and troubleshooting.
