@@ -1,0 +1,11 @@
+name: Delivery demo
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  delivery:
+    uses: cicd-demo-org/required-workflows/.github/workflows/delivery-pipeline.yml@44256f08485ed9b00c1a22d3e4960f2fe1b32e1b

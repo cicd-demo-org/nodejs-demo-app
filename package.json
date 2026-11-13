@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-demo-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small Node.js application for a simulated delivery pipeline.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "node --check src/index.js && node --check scripts/build.js",
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}

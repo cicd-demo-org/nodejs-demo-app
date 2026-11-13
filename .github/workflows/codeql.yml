@@ -1,0 +1,17 @@
+name: CodeQL
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    uses: cicd-demo-org/required-workflows/.github/workflows/npm-codeql.yml@44256f08485ed9b00c1a22d3e4960f2fe1b32e1b
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
