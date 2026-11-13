@@ -1,0 +1,22 @@
+name: Opt-in real container deployment
+on:
+  workflow_dispatch:
+    inputs:
+      image_digest:
+        description: Published GHCR image digest (sha256:...).
+        required: true
+        type: string
+      source_sha:
+        description: Full source commit SHA in the image attestation.
+        required: true
+        type: string
+permissions:
+  contents: read
+  packages: read
+  attestations: read
+jobs:
+  deploy:
+    uses: cicd-demo-org/required-workflows/.github/workflows/real-deployment.yml@af8c509ef832be245b7bfee5de847d5873309782
+    with:
+      image_digest: ${{ inputs.image_digest }}
+      source_sha: ${{ inputs.source_sha }}
