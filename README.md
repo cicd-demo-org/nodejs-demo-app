@@ -10,5 +10,8 @@ environment reviewer. Nothing is actually deployed or sent to external vendors.
 CodeQL is a separate real GitHub code-scanning workflow and requires the
 appropriate repository entitlement and configuration.
 
+Pull requests demonstrate the organization-required checks and the protected
+production approval before merge.
+
 See [governance-docs](https://github.com/cicd-demo-org/governance-docs) for
 setup, limits, and troubleshooting.
